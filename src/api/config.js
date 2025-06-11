@@ -1,5 +1,5 @@
 // export const BASE_URL = import.meta.env.VITE_API_BASE_URL;   // First link may be official api server on cloud
-export const BASE_URL = 'https://iiot-api-server-esfmevhwgrcmbpe6.eastasia-01.azurewebsites.net';
+export const BASE_URL = 'iiot-api-server-esfmevhwgrcmbpe6.southeastasia-01.azurewebsites.net';
 export const API_VERSION = '/api/v1';
 
 export const API_ROOT = `${BASE_URL}${API_VERSION}`;
