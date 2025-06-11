@@ -1,4 +1,4 @@
-export const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';   // First link may be official api server on cloud
+export const BASE_URL = import.meta.env.VITE_API_BASE_URL;   // First link may be official api server on cloud
 export const API_VERSION = '/api/v1';
 
 export const API_ROOT = `${BASE_URL}${API_VERSION}`;
