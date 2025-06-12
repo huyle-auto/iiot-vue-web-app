@@ -36,7 +36,7 @@ router.beforeEach(async (to, from, next) => {
     // }
 
     if (to.meta.requiresAuth && !authApi.isAuthenticated.value) {  // Route requires authentication and user is not authenticated
-        return next('/');
+        return next('/login');
     }
 
     next();
