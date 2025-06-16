@@ -1,4 +1,4 @@
-export const BASE_URL = import.meta.env.VITE_API_BASE_URL;   // Official api server on cloud || Dev-purpose only
+export const BASE_URL = "api-server-gggrajdbdmdhcvdh.southeastasia-01.azurewebsites.net";   // Official api server on cloud || Dev-purpose only
 export const API_VERSION = '/api/v1';
 
 export const API_ROOT = `${BASE_URL}${API_VERSION}`;
