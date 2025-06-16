@@ -1,18 +1,20 @@
-// export const BASE_URL = import.meta.env.VITE_API_BASE_URL;   // First link may be official api server on cloud
-export const BASE_URL = 'https://api-server-gggrajdbdmdhcvdh.southeastasia-01.azurewebsites.net';
+export const BASE_URL = import.meta.env.VITE_API_BASE_URL;   // Official api server on cloud || Dev-purpose only
 export const API_VERSION = '/api/v1';
 
 export const API_ROOT = `${BASE_URL}${API_VERSION}`;
 
 // API_PATH = API_ROOT + API_ROUTES (endpoint)
 export const API_ENDPOINT = {
-    login: '/login',
-    logout: '/logout',
-    me: '/me'
+  login: '/login',
+  logout: '/logout',
+  me: '/me',
+  refresh: '/refresh-token',
+  getAllUsers: '/getAllUsers',
+  getLatest: '/latest'
 };
 
 export const API_PATH = {
   auth: `${API_ROOT}/auth`,
   users: `${API_ROOT}/users`,
-  machines: `${API_ROOT}/machines`,
+  sensors: `${API_ROOT}/sensors`,
 };

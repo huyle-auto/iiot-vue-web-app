@@ -1,4 +1,5 @@
 import authApi from '@/api/v1/auth.js'
+import { API_ENDPOINT, API_PATH } from '../config';
 
 export async function secureFetch(url, options = {}) {
   const config = {
@@ -6,23 +7,37 @@ export async function secureFetch(url, options = {}) {
     credentials: 'include'  // Auto send with accessToken (cookie)
   };
 
-  let res = await fetch(url, config);
+  try {
+    let res = await fetch(url, config);
 
-  if (res.status === 401 || res.status === 403) {
-    // Try refresh
-    const refresh = await fetch('http://localhost:3000/api/v1/refresh-token', {
-      method: 'POST',
-      credentials: 'include'
-    });
+    // Initial request unauthenticated
+    if (res.status === 401 || res.status === 403) {
+      // Try refresh
+      const refresh = await fetch(API_PATH.auth + API_ENDPOINT.refresh, {
+        method: 'POST',
+        credentials: 'include'
+      });
 
-    if (!refresh.ok) {
-      authApi.logout(); // ❌ Refresh token expired
-      return null;
+      const refreshResult = await refresh.json().catch(() => ({}));
+
+      if (!refresh.ok) {
+        authApi.logout(); // Refresh token expired too
+        throw new Error(refreshResult.message || 'Session expired');
+      }
+
+      // Retry original request with new access token
+      res = await fetch(url, config);
     }
 
-    // ✅ Retry original request with new access token
-    res = await fetch(url, config);
-  }
+    const result = await res.json().catch(() => ({}));
 
-  return res;
+    if (!res.ok) {
+      throw new Error(result.message);
+    }
+    
+    return result;
+  }
+  catch (err) {
+    throw err;
+  }
 }

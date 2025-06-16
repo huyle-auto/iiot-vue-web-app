@@ -4,7 +4,7 @@
         :order="0">
 
         <v-list nav>
-            <v-list-item prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg" title="Le Quang Huy"
+            <v-list-item :prepend-avatar="avatar" title="Le Quang Huy"
                 subtitle="lequanghuyqn123@gmail.com"></v-list-item>
             
             <!-- Logout -->
@@ -50,18 +50,11 @@ import { useRoute, useRouter } from 'vue-router';
 import { computed } from 'vue';
 import { toast } from 'vuetify-sonner'
 import authApi from '@/api/v1/auth.js'
+import toastOptions from '@/toast/toastOptions.js'
+import avatar from '@/assets/huyle_avatar.png'
 
 const router = useRouter();
 const route = useRoute();
-
-const toastOptions = {
-    position: 'top-right',
-    duration: 3000,
-    icon: 'mdi-alert-circle',
-    closeButton: true,
-    important: true,
-    duration: 2000
-};
 
 // Hide sidebar from Login Page
 const showSidebar = computed(() => route.meta?.hideSidebar !== true);

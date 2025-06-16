@@ -6,7 +6,6 @@ const isAuthChecked = ref(false);
 
 // Authentication
 async function login(email, password) {
-    console.log("Imported server url:", import.meta.env.VITE_API_BASE_URL);
     const response = await fetch(API_PATH.auth + API_ENDPOINT.login, {
         method: 'POST',
         credentials: 'include',
