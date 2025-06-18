@@ -30,8 +30,9 @@ This desktop-based web application visualizes **real-time status** and **histori
 - Sensor data visualization (charts, tables)
 - Page routing & navigation
 
-## Web App available at: https://salmon-field-08f48e900.6.azurestaticapps.net
-* Always use to the above link to avoid (Status 404 Not Found) error
+## Live demo
+**Web App:** [https://salmon-field-08f48e900.6.azurestaticapps.net](https://salmon-field-08f48e900.6.azurestaticapps.net)  
+> Always use the exact link above to avoid **404 Not Found** errors.
 
 ## Run Locally
 
