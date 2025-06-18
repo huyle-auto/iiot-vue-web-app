@@ -2,7 +2,7 @@
 
 A modern, responsive, secured web dashboard built with **Vue.js**  
 
-Part of my self-learning project, along with [Vue Web App](https://github.com/huyle-auto/iiot-vue-web-app) and [API Server](https://github.com/huyle-auto/iiot-api-server). See full [project architecture](https://github.com/huyle-auto/iiot-micro-service-mqtt-client/blob/7a92edc33feab2fa177edbdcb55190a52904683b/architecture.jpg)
+Part of my self-learning project, along with [MQTT Client](https://github.com/huyle-auto/iiot-micro-service-mqtt-client) and [API Server](https://github.com/huyle-auto/iiot-api-server). See full [project architecture](https://github.com/huyle-auto/iiot-micro-service-mqtt-client/blob/7a92edc33feab2fa177edbdcb55190a52904683b/architecture.jpg)
 
 ## Use Case
 
